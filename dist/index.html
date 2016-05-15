@@ -4,41 +4,31 @@
 <head>
     <title>Neighborhood Map</title>
     <meta charset="UTF-8" name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
-    <!--link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css"-->
-    <script async src="js/jquery-1.12.0.min.js" rel="script"></script>
-
-    <script sync src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC__RsGVE5CbeYf5dG8uYe0BN5OepGYXro"></script>
-    <script sync src="js/knockout-3.4.0.js" rel="script"></script>
-    <script async type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"></script>
-    <script async type="text/javascript" src="http://oauth.googlecode.com/svn/code/javascript/oauth.js"></script>
-    <script async type="text/javascript" src="http://oauth.googlecode.com/svn/code/javascript/sha1.js"></script>
+    <script src="js/jquery-1.12.0.min.js" rel="script"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC__RsGVE5CbeYf5dG8uYe0BN5OepGYXro"></script>
+    <script src="js/knockout-3.4.0.js" rel="script"></script>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"></script>
     <script sync src="js/main.js" rel="script"></script>
     <link href="css/main.css" rel="stylesheet">
-
-
 </head>
 
 <body>
-
     <div class="container">
-
         <div class="input-contain">
-            <!--label for="autocomplete">Select a programming language: </label-->
-            <input class="input-filter" autofocus>
-            <button class="button-filter" data-bind="click: submitFilter" type="button">Filter List</button>
+            <input id="input" placeholder="Filter Locations" type="search" data-bind="textInput: query" autocomplete="off">
         </div>
-<div class="row">
-        <div class="list" data-bind="foreach: currLocList">
-            <ul id="list-box" class="list-box selected" data-bind="click: $parent.showInfo, css: { selected: isSelected}">
-                <li class="list-name" data-bind="text: name"></li>
-                <li class="list-address" data-bind="text: address"></li>
+        <div class="row">
+            <div id="map"></div>
+            <ul class="list" data-bind="foreach: currLocList">
+                <div class="list-box selected" data-bind="css:{selected: isSelected}">
+                    <li data-bind="click: $parent.showInfo, ">
+                        <span class="list-name" data-bind="text: name"></span>
+                        <span class="list-address" data-bind="text: address"></span>
+                    </li>
+                </div>
             </ul>
         </div>
-        <div id="map"></div>
     </div>
-
-    </div>
-
 </body>
 
 </html>
