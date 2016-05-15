@@ -2,9 +2,12 @@ body {
     font-family: "helvetica";
     background-color: hsl(200, 0%, 30%);
 }
+
 ul {
     margin: 0;
+    list-style-type: none
 }
+
 .container {
     width: 100vw;
     max-height: 100vh;
@@ -13,32 +16,30 @@ ul {
 }
 
 .input-contain {
-    display: flex;
-    flex-wrap: wrap;
     width: 100%;
-    height: 30px;
+    height: 40px;
     margin-left: 2.5vw;
+}
+
+#input {
+    width: 140px;
+    height: 100%;
+    color: gray;
+    background: white;
+    font-size: 1em;
 }
 
 .row {
     width: 100%;
-    display: flex;
-    flex-direction: column;
-
-}
-
-.list{
-    order: 2;
-        width: 96%;
-        height: 50vh;
-        overflow-y: scroll;
+    display: block;
 }
 
 #map {
     order: 1;
-        width: 90vw;
-        height: 40vh;
-        margin-left: 2.5vw;
+    width: 90vw;
+    height: 40vh;
+    margin-left: 2.5vw;
+    margin-bottom: 10px;
 }
 
 .list-contain {
@@ -49,36 +50,25 @@ ul {
     margin-top: 8px;
 }
 
+.list {
+    order: 2;
+    width: 96%;
+    padding: 0;
+}
+
 .list-box {
     display: block;
     width: 75%;
     margin-left: 20px;
     padding-top: 10px;
-    height: 40px;
-    border-bottom-color: hsl(1,0%,40%);
+    border-bottom-color: hsl(1, 0%, 40%);
     border-bottom-style: solid;
     border-bottom-width: 1px;
 }
 
-
-
 .list-box:focus {
     background-color: hsl(100, 0%, 40%);
 }
-
-.button-filter {
-    width: 130px;
-    height: 26px;
-    background: hsl(200, 90%, 40%);
-    font-size: 0.9em;
-    color: white;
-}
-
-.input-filter {
-    width: 140px;
-    height: 20px;
-}
-
 
 .list-name {
     font-size: 0.9em;
@@ -109,18 +99,13 @@ ul {
         margin: 0;
         background-color: hsl(100, 0%, 30%);
     }
-
     .row {
-        flex-direction: row;
+        display: flex;
     }
-
-    .list{
-        width: 35%;
-        height: 90vh;
+    .list {
+        max-width: 35%;
         order: 1;
-        overflow-y: scroll;
     }
-
     #map {
         order: 2;
         padding: 8px;
