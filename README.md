@@ -23,7 +23,12 @@ A 'view' object handles the inital map functionality.
 
 The ViewModel constructor is used to control the view as per Knockout.js documentation.
 
-Yelp (third party api) api is accessed via jQuery .ajax to get ratings and review information on each 'Location' and this info is displayed in the maps infoWindow when the location or its marker is clicked.
+FourSquare (third party api) api is accessed via jQuery .ajax to get some info on each 'Location' and this info is displayed in the maps infoWindow when the location or its marker is clicked.
+
+####How to run the app
+To run the app open the 'index.html' file in your browser.
+To filter the list of locations, enter text into the 'Filter Locations' input box.
+To get some info on a location, click on the location in the list or click on its marker on the map.
 
 
 
